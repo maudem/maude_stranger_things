@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-npm install
+npm install using node version 11.13 and npm version 6.9
 ```
 
 ### Compiles and hot-reloads for development

@@ -30,7 +30,7 @@
                     
                 </v-list-item>
                 <v-overflow-btn
-                class="my-2 hidden-sm-and-down"
+                
                 :items="language"
                 label="Language"
                 segmented
@@ -55,12 +55,20 @@ export default {
             mobileMenu: false,
             drawer:null,
             language: [
-              {text: 'English', callback: () => alert("english")},
-              {text: 'Ig-pay Atin-lay', callback: () => alert('pig-latin')},
+              {text: 'English', value: "english", callback: () => alert("english")},
+              {text: 'Ig-pay Atin-lay', value: "pigLatin", callback: () => alert('pig-latin')},
             ],
             //to hold the data responses
-            english: [],
-            pigLatin: [],
+            mounted(){
+                if(localStorage.language) {this.language = localStorage.language;
+                }
+                // console.log(language);
+            },
+            watch:{
+                language(newLanguage: string) {
+                    localStorage.language = newLanguage;
+                }
+            },
             // for loop for navs
             links:[
                 {text:'Inspiration', route: '/Inspiration'},

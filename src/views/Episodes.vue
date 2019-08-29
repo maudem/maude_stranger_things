@@ -49,18 +49,21 @@ export default {
         }
     },
     mounted() {
+
         axios.get("../../../data/en_US.json")
         .then(response => {
-            
-            const english = [...response.data];
-            console.log(english);
+            let english = response.data["episode-list"];
+            console.table(english);
         }),
+        
         axios.get("../../../data/la_PG.json")
         .then(response => {
-            const pigLatin = [...response.data];
+            let pigLatin = response.data["episode-list"];
+            console.table(pigLatin);
+
         })
         .catch(err => {
-
+            console.log(err);
         })
     }
 }
