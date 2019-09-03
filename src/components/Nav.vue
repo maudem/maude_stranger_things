@@ -53,7 +53,10 @@ export default {
         return {
             // logic for language dropdown
             mobileMenu: false,
+<<<<<<< Updated upstream
             drawer:null,
+=======
+>>>>>>> Stashed changes
             language: [
               {text: 'English', value: "english", callback: () => alert("english")},
               {text: 'Ig-pay Atin-lay', value: "pigLatin", callback: () => alert('pig-latin')},
@@ -70,27 +73,14 @@ export default {
                 }
             },
             // for loop for navs
-            links:[
-                {text:'Inspiration', route: '/Inspiration'},
-                {text:'Map', route: '/Map'},
-                {text:'Gallery', route: '/Gallery'},
-                {text:'Episodes', route: '/Episodes'},
+            links: [
+                {text: 'Inspiration', route: '/Inspiration'},
+                {text: 'Map', route: '/Map'},
+                {text: 'Gallery', route: '/Gallery'},
+                {text: 'Episodes', route: '/Episodes'},
 
             ],
-        }
+        };
     },
-    mounted() {
-        axios.get("../../../data/en_US.json")
-        .then(response => {
-            // this.english = [...response.data]
-        }),
-        axios.get("../../../data/la_PG.json")
-        .then(response => {
-            // this.pigLatin = [...response.data]
-        })
-        .catch(err => {
-
-        })
-    }
-}
+};
 </script>

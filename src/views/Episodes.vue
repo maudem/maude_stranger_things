@@ -24,47 +24,43 @@
   </v-container>
 </template>
 
- <script lang="ts">
-import axios from "axios";
+<script lang='ts'>
+    import axios from 'axios';
+    import language from '../components/Nav.vue';
+    import { consoleInfo } from 'vuetify/src/util/console';
 
-export default {
-    data() {
-        return {
-            // logic for language dropdown
-            language: [
-              {text: 'English', callback: () => alert("english")},
-              {text: 'Ig-pay Atin-lay', callback: () => alert('pig-latin')},
-            ],
-            //to hold the data responses
-            english: [],
-            pigLatin: [],
-            // for loop for navs
-            links:[
-                {text:'Inspiration', route: '/Inspiration'},
-                {text:'Map', route: '/Map'},
-                {text:'Gallery', route: '/Gallery'},
-                {text:'Episodes', route: '/Episodes'},
+    export default {
+        data() {
+            return {
+                // to hold the data responses
+                episodes: [],
+                // for loop for navs
+                links: [
+                    {text: 'Inspiration', route: '/Inspiration'},
+                    {text: 'Map', route: '/Map'},
+                    {text: 'Gallery', route: '/Gallery'},
+                    {text: 'Episodes', route: '/Episodes'},
 
-            ],
+                ],
+
+            };
+        },
+    created() {
+            // logic for get the right data int he correct language
+        if (localStorage.getItem('language') === 'pigLatin') {
+            axios.get('../../../data/la_PG.json')
+            .then((response) => {
+                this.episodes = response.data['episode-list'];
+            });
+        } else {
+            axios.get('../../../data/en_US.json')
+            .then((response) => {
+                this.episodes = response.data['episode-list'];
+            });
         }
     },
-    mounted() {
-
-        axios.get("../../../data/en_US.json")
-        .then(response => {
-            let english = response.data["episode-list"];
-            console.table(english);
-        }),
-        
-        axios.get("../../../data/la_PG.json")
-        .then(response => {
-            let pigLatin = response.data["episode-list"];
-            console.table(pigLatin);
-
-        })
-        .catch(err => {
-            console.log(err);
-        })
-    }
-}
+    components: {
+        language,
+    },
+};
 </script>
