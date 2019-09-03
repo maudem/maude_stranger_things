@@ -53,10 +53,6 @@ export default {
         return {
             // logic for language dropdown
             mobileMenu: false,
-<<<<<<< Updated upstream
-            drawer:null,
-=======
->>>>>>> Stashed changes
             language: [
               {text: 'English', value: "english", callback: () => alert("english")},
               {text: 'Ig-pay Atin-lay', value: "pigLatin", callback: () => alert('pig-latin')},
