@@ -21,24 +21,6 @@
             </v-list>
         </v-carousel-item>
     </v-carousel>
-    <!-- <v-layout row wrap>
-      <v-flex md7 offset-md3>
-        <v-card>
-          <v-list three-line>
-                <v-list-item
-                v-for="image in images" 
-                :key="image.index"
-                >
-                <v-img
-                :src='image.src'
-                ><p><strong>Description: </strong>{{image.text}}</p></v-img>
-                <br>
-                
-                </v-list-item>
-            </v-list>
-        </v-card>
-      </v-flex>
-    </v-layout> -->
   </v-container>
 </template>
 
@@ -76,5 +58,11 @@
 <style lang="scss" scoped>
     img {
         max-width: 50%;
+    }
+    .v-list {
+        padding:20px;
+    }
+    .v-list-item__content {
+        justify-content: center;
     }
 </style>

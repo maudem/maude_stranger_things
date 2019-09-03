@@ -8,11 +8,18 @@
                 v-for="episode in episodes" 
                 :key="episode.index"
                 >
-                <p><strong>Season: </strong>{{episode.season}}</p>
-                <br>
-                <p><strong>Episode: </strong>{{episode.name}}</p>
-                <br>
-                <p><strong>Rating: </strong>{{episode.rating}}</p>
+                    <v-list-item-content>
+                        <v-list-item-title><strong>
+                            Season: </strong>{{episode.season}}
+                        </v-list-item-title>
+                        <v-list-item-title>
+                            <strong>Episode: </strong>{{episode.name}}
+                        </v-list-item-title>
+                        <v-list-item-title>
+                            <strong>Rating: </strong>{{episode.rating}}
+                        </v-list-item-title>
+                    </v-list-item-content>
+                    
                 </v-list-item>
             </v-list>
         </v-card>
@@ -56,3 +63,9 @@
     },
 };
 </script>
+<style lang="scss" scoped>
+    .v-list {
+        height: 700px;
+        overflow:scroll;
+    }
+</style>

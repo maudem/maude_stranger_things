@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts">
-import axios from "axios";
+import axios from 'axios';
 
 export default {
     data() {
@@ -54,8 +54,8 @@ export default {
             // logic for language dropdown
             mobileMenu: false,
             language: [
-              {text: 'English', value: "english", callback: () => localStorage.setItem('language', 'english')},
-              {text: 'Ig-pay Atin-lay', value: "pigLatin", callback: () => localStorage.setItem('language', 'pigLatin')},
+              {text: 'English', value: 'english', callback: () => localStorage.setItem('language', 'english')},
+              {text: 'Ig-pay Atin-lay', value: 'pigLatin', callback: () => localStorage.setItem('language', 'pigLatin')},
             ],
             //to hold the data responses
             mounted(){
