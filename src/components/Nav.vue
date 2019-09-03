@@ -54,8 +54,8 @@ export default {
             // logic for language dropdown
             mobileMenu: false,
             language: [
-              {text: 'English', value: "english", callback: () => alert("english")},
-              {text: 'Ig-pay Atin-lay', value: "pigLatin", callback: () => alert('pig-latin')},
+              {text: 'English', value: "english", callback: () => localStorage.setItem('language', 'english')},
+              {text: 'Ig-pay Atin-lay', value: "pigLatin", callback: () => localStorage.setItem('language', 'pigLatin')},
             ],
             //to hold the data responses
             mounted(){

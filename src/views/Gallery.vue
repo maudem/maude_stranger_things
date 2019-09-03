@@ -1,6 +1,27 @@
  <template>
-  <v-container class="episode-list">
-    <v-layout row wrap>
+  <v-container class="gallery">
+    <v-carousel 
+    height="700"
+    >
+        <v-carousel-item
+        v-for="image in images" 
+        :key="image.index"
+        >
+            <v-img
+            :src="image.src"
+            aspect-ratio="3.0"
+            height="600"
+            >
+            </v-img>
+            <v-list
+            >
+                <v-list-item-content>
+                    {{image.text}}                    
+                </v-list-item-content>
+            </v-list>
+        </v-carousel-item>
+    </v-carousel>
+    <!-- <v-layout row wrap>
       <v-flex md7 offset-md3>
         <v-card>
           <v-list three-line>
@@ -10,14 +31,14 @@
                 >
                 <v-img
                 :src='image.src'
-                ></v-img>
+                ><p><strong>Description: </strong>{{image.text}}</p></v-img>
                 <br>
-                <p><strong>Description: </strong>{{image.text}}</p>
+                
                 </v-list-item>
             </v-list>
         </v-card>
       </v-flex>
-    </v-layout>
+    </v-layout> -->
   </v-container>
 </template>
 
@@ -52,3 +73,8 @@
     },
 };
 </script>
+<style lang="scss" scoped>
+    img {
+        max-width: 50%;
+    }
+</style>
