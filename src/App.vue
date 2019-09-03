@@ -26,11 +26,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-<<<<<<< Updated upstream
-import Nav from '@/components/Nav'; /*--something going on with the linter, but works --*/
-=======
-import Nav from '@/components/Nav.vue'; /*--something going on with the linter, but works --*/
->>>>>>> Stashed changes
+import Nav from '@/components/Nav.vue';
 
 export default Vue.extend({
   name: 'App',

@@ -1,23 +1,20 @@
-<template>
-  <v-container class="home">
+ <template>
+  <v-container class="episode-list">
     <v-layout row wrap>
       <v-flex md7 offset-md3>
         <v-card>
-          <v-list two-line>
-          <!-- <template v-for="(data, episode-list) in english">
-            <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
-            <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
-            <v-list-tile v-else :key="item.title" avatar @click="">
-              <v-list-tile-avatar>
-                <img :src="item.avatar">
-              </v-list-tile-avatar>
-              <v-list-tile-content>
-                <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </template> -->
-        </v-list>
+          <v-list three-line>
+                <v-list-item
+                v-for="episode in episodes" 
+                :key="episode.index"
+                >
+                <p><strong>Season: </strong>{{episode.season}}</p>
+                <br>
+                <p><strong>Episode: </strong>{{episode.name}}</p>
+                <br>
+                <p><strong>Rating: </strong>{{episode.rating}}</p>
+                </v-list-item>
+            </v-list>
         </v-card>
       </v-flex>
     </v-layout>
@@ -34,15 +31,6 @@
             return {
                 // to hold the data responses
                 episodes: [],
-                // for loop for navs
-                links: [
-                    {text: 'Inspiration', route: '/Inspiration'},
-                    {text: 'Map', route: '/Map'},
-                    {text: 'Gallery', route: '/Gallery'},
-                    {text: 'Episodes', route: '/Episodes'},
-
-                ],
-
             };
         },
     created() {
