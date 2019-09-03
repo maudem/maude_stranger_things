@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex md7 offset-md3>
         <v-card>
-          <v-list three-line>
+          <v-list>
                 <v-list-item
                 v-for="episode in episodes" 
                 :key="episode.index"
@@ -21,7 +21,7 @@
   </v-container>
 </template>
 
-<script lang='ts'>
+<script>
     import axios from 'axios';
     import language from '../components/Nav.vue';
     import { consoleInfo } from 'vuetify/src/util/console';
@@ -31,20 +31,24 @@
             return {
                 // to hold the data responses
                 episodes: [],
-            };
+                loading:true
+            }
         },
-    created() {
+    mounted() {
             // logic for get the right data int he correct language
         if (localStorage.getItem('language') === 'pigLatin') {
             axios.get('../../../data/la_PG.json')
-            .then((response) => {
+            .then(response => {
                 this.episodes = response.data['episode-list'];
             });
         } else {
             axios.get('../../../data/en_US.json')
-            .then((response) => {
+            .then(response => {
                 this.episodes = response.data['episode-list'];
-            });
+            })
+             .catch(error => {
+      console.log(error)
+    });
         }
     },
     components: {

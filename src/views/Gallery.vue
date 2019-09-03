@@ -21,7 +21,7 @@
   </v-container>
 </template>
 
-<script lang='ts'>
+<script>
     import axios from 'axios';
     import language from '../components/Nav.vue';
     import { consoleInfo } from 'vuetify/src/util/console';
@@ -33,7 +33,7 @@
                 images: [],
             };
         },
-    created() {
+    mounted() {
             // logic for get the right data int he correct language
         if (localStorage.getItem('language') === 'pigLatin') {
             axios.get('../../../data/la_PG.json')
