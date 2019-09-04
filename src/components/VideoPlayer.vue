@@ -21,11 +21,11 @@
         data() {
             return {
                 // to hold the data responses
-                video: [],
+                video:"",
                 // loading:true
             };
         },
-    mounted() {
+    created() {
           // logic for get the right data int he correct language
         if (localStorage.getItem('language') === 'pigLatin') {
             axios.get('../../../data/la_PG.json')
