@@ -21,7 +21,7 @@
         data() {
             return {
                 // to hold the data responses
-                video:"",
+                video: [0],
                 // loading:true
             };
         },

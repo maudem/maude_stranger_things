@@ -3,6 +3,12 @@
     <v-layout row wrap>
       <v-flex md7 offset-md3>
         <v-card>
+            <h1>
+            {{heading}}
+            </h1>
+            <p>{{desc}}</p>
+        </v-card>  
+        <v-card>
             <v-list
             v-for="snippet in snippets"
             :key="snippet.index" 
@@ -11,12 +17,6 @@
                     {{snippet}}
                 </v-list-item>
             </v-list>
-        </v-card>
-        <v-card>
-            <h1>
-            {{heading}}
-            </h1>
-            <p>{{desc}}</p>
         </v-card>
         <v-card>
             <p>{{quote.text}}</p>
