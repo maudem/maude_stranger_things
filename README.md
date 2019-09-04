@@ -1,5 +1,7 @@
 # maude_stranger_things
-
+## checkit out on
+https://strangerworld.netlify.com/#/
+```
 ## Project setup
 ```
 npm install using node version 11.13 and npm version 6.9

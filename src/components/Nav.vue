@@ -58,7 +58,7 @@ export default {
               {text: 'Ig-pay Atin-lay', value: 'pigLatin', callback: () => localStorage.setItem('language', 'pigLatin')},
             ],
             //to hold the data responses
-            mounted(){
+            method(){
                 if(localStorage.language) {this.language = localStorage.language;
                 }
                 // console.log(language);
