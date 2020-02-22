@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import axios from 'axios';
+// import axios from 'axios';
 import './registerServiceWorker';
 import 'vuetify/dist/vuetify.min.css';
 import vuetify from './plugins/vuetify';

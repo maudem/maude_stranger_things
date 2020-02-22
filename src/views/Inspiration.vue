@@ -44,6 +44,7 @@
                 heading: [],
                 desc: [],
                 quote: [],
+                video: [],
                 // loading:true
             };
         },
@@ -53,6 +54,11 @@
             axios.get('../../../data/la_PG.json')
             .then((response) => {
                 this.snippets = response.data.snippets;
+                this.heading = response.data.heading;
+                this.desc = response.data.description;
+                this.quote = response.data.quote;
+                this.video = response.data['video-embed'];
+                
             });
         } else {
             axios.get('../../../data/en_US.json')
